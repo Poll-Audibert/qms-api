@@ -27,8 +27,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy
-            .WithOrigins("http://localhost:3000")
-            .AllowAnyHeader()
+.WithOrigins(
+    "http://localhost:3000",
+    "https://qms-dhh5.onrender.com"
+).AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
     });
